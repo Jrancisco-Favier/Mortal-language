@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade de Palabras</title>
+    <link rel="stylesheet" href="juego.css">
+    <style>
+        .player-figure {
+            font-size: 8vh;
+            animation: bounce 0.5s infinite alternate;
+        }
+        .enemy-figure {
+            font-size: 8vh;
+            animation: bounce 0.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-0.5vh); }
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1 id="game-title">Arcade de Palabras</h1>
+        <p id="game-message">¡Presiona START para comenzar!</p>
+
+        <!-- Player and Enemy UI -->
+        <div class="combat-ui">
+            <div class="player-character">
+                <span class="character-name">TÚ</span>
+                <span class="player-figure">🧍</span>
+                <div class="health-bar-container">
+                    <div id="player-health-bar" class="health-bar"></div>
+                </div>
+            </div>
+            <div class="enemy-character">
+                <span class="character-name">OPONENTE</span>
+                <span class="enemy-figure">🧍</span>
+                <div class="health-bar-container">
+                    <div id="enemy-health-bar" class="health-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="question-container" style="display: none;">
+            <p id="question-text"></p>
+            <div id="connect-container" style="display: none;">
+                <ul id="left-list" class="connect-list"></ul>
+                <ul id="right-list" class="connect-list"></ul>
+            </div>
+            <ul id="options-list"></ul>
+            <input type="text" id="open-answer" placeholder="Escribe tu respuesta..." style="display: none;">
+            <div id="feedback-container">
+                <p id="feedback-text"></p>
+            </div>
+        </div>
+        <button id="start-button" class="btn">START</button>
+        <button id="submit-button" class="btn" style="display: none;">ENVIAR</button>
+        <button id="next-button" class="btn" style="display: none;">SIGUIENTE</button>
+    </div>
+    <script src="juego.js"></script>
+</body>
+</html>
